@@ -29,16 +29,23 @@ public class Main {
         rooms.printInfo();
 
         System.out.println("*-".repeat(15));
-        Booking b1 = Booking.makeBooking(g1, r1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), "work");
+        Booking b1 = Booking.makeBooking(g1, r1, LocalDate.of(2021, 7, 19), LocalDate.of(2021, 7, 26), VacationType.WORK);
+//        b1.addGuest(g2);
+
         List<Guest> guestList = Arrays.asList(g1, g2);
-        Booking b2 = Booking.makeBooking(guestList, r1, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), "work");
+        Booking b2 = Booking.makeBooking(guestList, r1, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9, 14), VacationType.WORK);
         // b3 - Room is not available for the selected dates.
-        Booking b3 = Booking.makeBooking(g2, r1, LocalDate.of(2021, 7, 25), LocalDate.of(2021, 7, 26), "work");
+        Booking b3 = Booking.makeBooking(g2, r1, LocalDate.of(2021, 7, 25), LocalDate.of(2021, 7, 26), VacationType.WORK);
+        Booking b4 = Booking.makeBooking(g1, r3, LocalDate.of(2024, 11, 24), LocalDate.of(2024, 11, 30), VacationType.LEASURE);
+        Booking b5 = Booking.makeBooking(guestList, r2);
 
         BookingManager bookings = new BookingManager();
         bookings.addInfo(b1);
         bookings.addInfo(b2);
         bookings.addInfo(b3);
+        bookings.addInfo(b4);
+        bookings.addInfo(b5);
+
         bookings.printInfo();
 
 
